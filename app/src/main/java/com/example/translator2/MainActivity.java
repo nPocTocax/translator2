@@ -4,18 +4,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.InputStream;
 import java.util.Locale;
-import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
     public Button button;
     public EditText editText;
-    public TextView text;
+    public EditText editMorse;
 
     char[] russian = {'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к',
             'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц',
@@ -36,45 +33,51 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
         editText = findViewById(R.id.editText);
-        text = findViewById(R.id.text);
+        editMorse = findViewById(R.id.editMorse);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
-                String userInput = editText.getText().toString().toLowerCase(Locale.ROOT);
-                String str = "";
-                for (int i = 0; i < userInput.length(); i++) {
-                    str += translate(userInput.charAt(i))+" ";
-                            
-
+                String textInput = editText.getText().toString().toLowerCase(Locale.ROOT);
+                String morseInput = editMorse.getText().toString();
+                if(textInput.equals("") && morseInput.equals("")) {
+                    return;
                 }
-                
-                char[] chars = userInput.toCharArray();
-
-
-
-
-                text.setText(str);
-
-
-
+                if(!textInput.equals("")) {
+                    String str = "";
+                    for (int i = 0; i < textInput.length(); i++) {
+                        str += translateToMorse(textInput.charAt(i)) + " ";
+                    }
+                    editMorse.setText(str);
+                } else {
+                    String[] s = morseInput.split(" ");
+                    String str = "";
+                    for (int i = 0; i < s.length; i++) {
+                        str += traslateFromMorse(s[i]);
+                    }
+                    editText.setText(str);
+                }
             }
         });
-
-
     }
-    
-    String translate(char letter){
-        for (int i = 0; i < russian2.length; i++) {
+
+    String translateToMorse(char letter){
+        for (int i = 0; i < russian.length; i++) {
             if (letter == russian2[i]) {
                 return morse[i];
             }
         }
 
         return "@";
+    }
+
+    char traslateFromMorse(String str) {
+        for (int i = 0; i < morse.length; i++) {
+            if(str.equals(morse[i])){
+                return russian2[i];
+            }
+        }
+        return '@';
     }
 
 
