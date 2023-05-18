@@ -1,6 +1,5 @@
 package com.example.translator2;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public EditText editMorse;
     public Button button2;
 
-    
+
 
 
     char[] russian = {'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к',
