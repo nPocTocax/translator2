@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
     public Button button2;
 
 
-
-
     char[] russian = {'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к',
             'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц',
             'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', ' ', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.', ',', '-', '?', '!', };
@@ -37,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         editMorse = findViewById(R.id.editMorse);
         button2 = findViewById(R.id.button2);
 
+
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 editMorse.setText("");
 
             }
-        });
+            });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
