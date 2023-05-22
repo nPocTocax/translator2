@@ -1,5 +1,8 @@
 package com.example.translator2;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public EditText editText;
     public EditText editMorse;
     public Button button2;
+    public Button button3;
 
 
     char[] russian = {'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к',
@@ -34,10 +38,21 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         editMorse = findViewById(R.id.editMorse);
         button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
 
 
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                EditText txtField = findViewById(R.id.editMorse);
+                String text = txtField.getText().toString();
+                ClipData clip = ClipData.newPlainText("text", text);
+                clipboard.setPrimaryClip(clip);
+            }
+        });
 
-        button2.setOnClickListener(new View.OnClickListener() {
+                button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 editText.setText("");
