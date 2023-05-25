@@ -11,8 +11,8 @@
 
     <EditText
         android:id="@+id/editMorse"
-        android:layout_width="355dp"
-        android:layout_height="122dp"
+        android:layout_width="357dp"
+        android:layout_height="104dp"
         android:drawableTint="#FFFFFF"
         android:hint="Морзе"
         android:shadowColor="#ffffff"
@@ -21,15 +21,15 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="355dp"
-        android:layout_height="122dp"
+        android:layout_width="354dp"
+        android:layout_height="98dp"
         android:ems="10"
         android:hint="Русский"
         android:inputType="text"
@@ -38,46 +38,48 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.238" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="129dp"
-        android:layout_height="53dp"
+        android:layout_height="60dp"
         android:text="Перевести "
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.383" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="148dp"
+        android:layout_height="60dp"
+        android:text="стереть "
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="148dp"
-        android:layout_height="53dp"
-        android:text="стереть "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
-
-    <Button
         android:id="@+id/button3"
         android:layout_width="148dp"
-        android:layout_height="53dp"
+        android:layout_height="60dp"
         android:text="скопировать"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.889"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintVertical_bias="0.499" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
